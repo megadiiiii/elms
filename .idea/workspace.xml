@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b3d4f8f8-87cc-4ed0-af08-cca6af1876d3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../AI/.idea/AI.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../AI/C1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../AI/C2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../AI/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../AI/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../AI/sample.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Android/.idea/modules/HRM.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Android/.idea/modules/app/HRM.app.androidTest.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Android/.idea/modules/app/HRM.app.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Android/.idea/modules/app/HRM.app.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Android/.idea/modules/app/HRM.app.unitTest.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Android/SapHetChua/app/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Android/SapHetChua/app/build.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Android/SapHetChua/app/google-services.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Android/SapHetChua/app/proguard-rules.pro" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Android/SapHetChua/app/src/androidTest/java/com/megadiiiii/saphetchua/ExampleInstrumentedTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Android/SapHetChua/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Android/SapHetChua/app/src/main/java/com/megadiiiii/saphetchua/MainActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Android/SapHetChua/app/src/main/java/com/megadiiiii/saphetchua/data/Item.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Android/SapHetChua/app/src/main/java/com/megadiiiii/saphetchua/data/ItemRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Android/SapHetChua/app/src/main/java/com/megadiiiii/saphetchua/data/PackagePreset.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Android/SapHetChua/app/src/main/java/com/megadiiiii/saphetchua/ui/EmeraldPrimary.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Android/SapHetChua/app/src/main/java/com/megadiiiii/saphetchua/ui/home/HomeViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Android/SapHetChua/app/src/main/java/com/megadiiiii/saphetchua/ui/theme/Color.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Android/SapHetChua/app/src/main/java/com/megadiiiii/saphetchua/ui/theme/Theme.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Android/SapHetChua/app/src/main/java/com/megadiiiii/saphetchua/ui/theme/Type.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Android/SapHetChua/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Android/SapHetChua/app/src/main/res/drawable/ic_launcher_foreground.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Android/SapHetChua/app/src/main/res/mipmap-anydpi/ic_launcher.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Android/SapHetChua/app/src/main/res/mipmap-anydpi/ic_launcher_round.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Android/SapHetChua/app/src/main/res/mipmap-hdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Android/SapHetChua/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Android/SapHetChua/app/src/main/res/mipmap-mdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Android/SapHetChua/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Android/SapHetChua/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Android/SapHetChua/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Android/SapHetChua/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Android/SapHetChua/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Android/SapHetChua/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Android/SapHetChua/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Android/SapHetChua/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Android/SapHetChua/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Android/SapHetChua/app/src/main/res/values/themes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Android/SapHetChua/app/src/main/res/xml/backup_rules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Android/SapHetChua/app/src/main/res/xml/data_extraction_rules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Android/SapHetChua/app/src/test/java/com/megadiiiii/saphetchua/ExampleUnitTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Android/SapHetChua/gradle/libs.versions.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DSA/BST/BST.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DSA/BST/BST/BST.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DSA/BT/BT.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DSA/DSA/DSA.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DSA/DSA_JAVA/DSA_JAVA.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DSA/Practice/Practice.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DSA/Practice/out/production/Practice/Practice.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_api.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/config/DataInit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/config/PasswordGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/config/WebConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/constant/AttendanceStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/constant/ClassStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/constant/CourseStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/constant/RoleType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/constant/SessionStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/constant/UserStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/controller/AuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/controller/DashboardController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/controller/StaffController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/dto/request/LoginRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/dto/request/StaffRequestDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/dto/response/AuthResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/dto/response/ClassSummaryResponseDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/dto/response/CourseDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/dto/response/DashboardStatsResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/dto/response/RoleDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/dto/response/ScheduleViewDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/dto/response/StaffDetailDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/dto/response/StaffSummaryDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/dto/response/StudentAttendanceViewDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/dto/response/StudentDetailDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/dto/response/StudentSummaryDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/dto/response/UserDetailDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/mappers/StaffMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/models/Attendance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/models/ClassEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/models/ClassSession.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/models/Course.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/models/Grade.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/models/LessonMaterial.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/models/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/models/Schedule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/models/StaffProfile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/models/StudentProfile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/models/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/repository/AttendanceRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/repository/ClassSessionRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/repository/CourseRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/repository/GradeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/repository/LessonMaterialRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/repository/RoleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/repository/StaffRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/security/CustomUserDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/security/JwtAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/security/JwtTokenProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/security/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/security/UserDetailsServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/services/DashboardService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/services/EmailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/services/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/services/impl/EmailServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/services/impl/UserDetailsServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/services/impl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/resources/static/images/default-avatar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/resources/static/js/countries.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/resources/static/js/materials.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SP/XSTK_SP/XSTK_SP.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../exam/.idea/exam.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../NCKH/.idea/NCKH.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Network/.idea/Network.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../HTML/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../HTML/test.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CopilotPersistence">
+    <persistenceIdMap>
+      <entry key="_D:/IS/Java/PJ/elms_api" value="3F5T1mXlrtOVA6isSy1DKVa9Ih3" />
+      <entry key="_D:/IS/Java/PJ/elms_api/elms_backend" value="3F639Uu04WavmDDvgLIR2Jrld5Z" />
+    </persistenceIdMap>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;megadiiiii&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/hoa2995/WEB-BAN-HANG.git&quot;,
+    &quot;accountId&quot;: &quot;3d5d852f-5f84-4d1f-bf98-af5e6b32bd5d&quot;
+  }
+}</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="Security Analysis" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="3F5T1mXlrtOVA6isSy1DKVa9Ih3" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JUnit.ElmsApiApplicationTests.testSchedule.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.ElmsApiApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;api&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/IS/Java/PJ/elms_api/elms_backend/src/main/java/org/megadiiiii/elms_api&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IS\Java\PJ\elms_api\elms_backend\src\main\java\org\megadiiiii\elms_api" />
+      <recent name="D:\IS\Java\PJ\elms_api\elms_backend" />
+      <recent name="D:\IS\Java\PJ\elms_api\elms_backend\src\main\resources\static\" />
+      <recent name="D:\IS\Java\PJ\elms_api\elms_backend\src\main\resources\static" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.megadiiiii.elms_api.services" />
+      <recent name="org.megadiiiii.elms_api.services.impl" />
+      <recent name="org.megadiiiii.elms_api.mappers" />
+      <recent name="org.megadiiiii.elms_api.dto.request" />
+      <recent name="org.megadiiiii.elms_api.controller" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="ElmsApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="elms_api" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.megadiiiii.elms_api.ElmsApiApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.23892.409" />
+        <option value="bundled-js-predefined-d6986cc7102b-e03c56caf84a-JavaScript-IU-252.23892.409" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b3d4f8f8-87cc-4ed0-af08-cca6af1876d3" name="Changes" comment="" />
+      <created>1781363724699</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1781363724699</updated>
+      <workItem from="1781363728919" duration="951000" />
+      <workItem from="1781365079394" duration="11964000" />
+      <workItem from="1781381542691" duration="323000" />
+      <workItem from="1781451937024" duration="6233000" />
+      <workItem from="1781493162838" duration="17926000" />
+      <workItem from="1781595355720" duration="11120000" />
+      <workItem from="1782499677936" duration="3101000" />
+      <workItem from="1782893513885" duration="8433000" />
+      <workItem from="1782954550845" duration="731000" />
+      <workItem from="1783233401916" duration="7914000" />
+      <workItem from="1783306770012" duration="22000" />
+      <workItem from="1783430287897" duration="8451000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
+  </component>
+</project>

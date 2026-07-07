@@ -1,0 +1,267 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f7f9fb;
+  transition: background-color 0.3s ease;
+}
+
+/* ==========================================
+   GLOBAL DARK MODE OVERRIDES
+   ========================================== */
+
+/* Nền tối toàn cục cho HTML và Body */
+.dark html, 
+.dark body, 
+.dark #root {
+  background-color: #0b1322 !important; /* Đen xanh sâu thẳm (slate-950/deep) */
+  color: #f1f5f9;
+}
+
+/* Các khối panel/card màu trắng */
+.dark .bg-white {
+  background-color: #1e293b !important; /* slate-800 - nổi bật rõ rệt trên nền body */
+  color: #f1f5f9 !important;
+}
+
+/* Các khu vực nền xám nhẹ và nền có opacity */
+.dark .bg-slate-50,
+.dark .bg-slate-50\/75,
+.dark .bg-slate-50\/50,
+.dark .bg-slate-50\/20 {
+  background-color: #0f172a !important; /* slate-900 - tạo chiều sâu thụt vào */
+}
+
+.dark .bg-slate-100,
+.dark .bg-slate-100\/50 {
+  background-color: #1e293b !important; /* slate-800 */
+}
+
+.dark .bg-scholarly-bg {
+  background-color: #0b1322 !important;
+}
+
+/* Các đường viền */
+.dark .border-slate-100,
+.dark .border-slate-200,
+.dark .border-slate-200\/80,
+.dark .border-slate-200\/60,
+.dark .border {
+  border-color: #334155 !important; /* slate-700 - viền sáng rõ nét hơn để chia ranh giới */
+}
+
+/* Màu chữ Dark Mode chính xác tách biệt */
+.dark .text-slate-900 { color: #f8fafc !important; }
+.dark .text-slate-800 { color: #f1f5f9 !important; }
+.dark .text-slate-700 { color: #e2e8f0 !important; }
+.dark .text-slate-655 { color: #e2e8f0 !important; }
+.dark .text-slate-650 { color: #e2e8f0 !important; }
+.dark .text-slate-600 { color: #cbd5e1 !important; }
+.dark .text-slate-500 { color: #94a3b8 !important; }
+.dark .text-slate-455 { color: #94a3b8 !important; }
+.dark .text-slate-450 { color: #94a3b8 !important; }
+.dark .text-slate-400 { color: #94a3b8 !important; }
+.dark .text-slate-350 { color: #94a3b8 !important; }
+
+/* Các trường nhập liệu (Inputs, Select, Textarea) */
+.dark input,
+.dark select,
+.dark textarea {
+  background-color: #0f172a !important; /* slate-900 - chìm vào trong card */
+  border-color: #334155 !important; /* slate-700 */
+  color: #f8fafc !important;
+}
+
+.dark input:focus,
+.dark select:focus,
+.dark textarea:focus {
+  background-color: #0f172a !important;
+  border-color: #3b82f6 !important; /* focus viền xanh */
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: #64748b !important; /* slate-500 */
+}
+
+/* Bảng dữ liệu (Table) */
+.dark table {
+  background-color: #1e293b !important; /* Nổi bật bảng trên nền body */
+}
+
+.dark thead,
+.dark th {
+  background-color: #0f172a !important; /* thead chìm xuống */
+  color: #94a3b8 !important;
+  border-color: #334155 !important;
+}
+
+.dark td {
+  border-color: #334155 !important;
+  color: #cbd5e1 !important;
+}
+
+.dark tr:hover {
+  background-color: rgba(51, 65, 85, 0.4) !important; /* Hover row sáng rõ hơn */
+}
+
+/* Hiệu ứng hover cho các mục bấm được */
+.dark .hover\:bg-slate-50:hover,
+.dark .hover\:bg-slate-100:hover,
+.dark .hover\:bg-slate-100\/50:hover {
+  background-color: #334155 !important; /* slate-700 - hover nổi bật hơn */
+}
+
+.dark .hover\:bg-blue-50:hover {
+  background-color: rgba(59, 130, 246, 0.15) !important;
+}
+
+/* Các shadow */
+.dark .shadow-sm,
+.dark .shadow,
+.dark .shadow-md,
+.dark .shadow-lg,
+.dark .shadow-xl {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.6), 0 4px 6px -2px rgba(0, 0, 0, 0.6) !important; /* Shadow sâu để đẩy content nổi bật hẳn lên */
+}
+
+/* Phân trang và bộ lọc trong các Table */
+.dark .bg-blue-50\/20 {
+  background-color: rgba(59, 130, 246, 0.15) !important;
+}
+
+/* ==========================================
+   FULLCALENDAR PREMIUM UI OVERRIDES
+   ========================================== */
+.schedule-calendar-wrapper {
+  --fc-border-color: #f1f5f9;
+  --fc-today-bg-color: rgba(99, 102, 241, 0.03);
+}
+
+.dark .schedule-calendar-wrapper {
+  --fc-border-color: #1e293b;
+  --fc-today-bg-color: rgba(99, 102, 241, 0.08);
+}
+
+.schedule-calendar-wrapper .fc-theme-standard td,
+.schedule-calendar-wrapper .fc-theme-standard th {
+  border: 1px solid var(--fc-border-color) !important;
+}
+
+.schedule-calendar-wrapper .fc-scrollgrid {
+  border: 1px solid var(--fc-border-color) !important;
+  border-radius: 1.25rem !important;
+  overflow: hidden !important;
+}
+
+.schedule-calendar-wrapper .fc-col-header-cell {
+  background: #f8fafc !important;
+  padding: 12px 0 !important;
+}
+
+.dark .schedule-calendar-wrapper .fc-col-header-cell {
+  background: #0f172a !important;
+}
+
+.schedule-calendar-wrapper .fc-col-header-cell-cushion {
+  font-size: 0.75rem !important;
+  font-weight: 800 !important;
+  color: #475569 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.dark .schedule-calendar-wrapper .fc-col-header-cell-cushion {
+  color: #94a3b8 !important;
+}
+
+.schedule-calendar-wrapper .fc-timegrid-slot {
+  height: 2.2rem !important;
+}
+
+.schedule-calendar-wrapper .fc-timegrid-slot-label-cushion {
+  font-size: 0.7rem !important;
+  font-weight: 700 !important;
+  color: #64748b !important;
+}
+
+.schedule-calendar-wrapper .fc-daygrid-day-number {
+  font-size: 0.75rem !important;
+  font-weight: 800 !important;
+  color: #475569 !important;
+  padding: 8px !important;
+}
+
+.dark .schedule-calendar-wrapper .fc-daygrid-day-number {
+  color: #cbd5e1 !important;
+}
+
+/* Event container overrides to support tailwind styles */
+.schedule-calendar-wrapper .fc-v-event {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.schedule-calendar-wrapper .fc-event {
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+.schedule-calendar-wrapper .fc-timegrid-event-harness {
+  margin: 0 4px !important;
+}
+
+/* Modern dashed gridlines for 30-min marks */
+.schedule-calendar-wrapper .fc-timegrid-slot-minor {
+  border-top-style: dashed !important;
+  opacity: 0.5;
+}
+
+/* Google/Apple Calendar style Today Highlight Badge */
+.schedule-calendar-wrapper .fc-day-today {
+  background-color: var(--fc-today-bg-color) !important;
+}
+
+.schedule-calendar-wrapper .fc-day-today .fc-daygrid-day-number {
+  background: #6366f1 !important;
+  color: #ffffff !important;
+  border-radius: 9999px;
+  padding: 4px 8px !important;
+  margin: 4px 6px !important;
+  display: inline-block;
+  min-width: 22px;
+  text-align: center;
+}
+
+/* Elegant styling for FullCalendar List View */
+.schedule-calendar-wrapper .fc-list {
+  border: 1px solid var(--fc-border-color) !important;
+  border-radius: 1.25rem !important;
+  overflow: hidden !important;
+}
+
+.schedule-calendar-wrapper .fc-list-day-cushion {
+  background: #f8fafc !important;
+  padding: 10px 16px !important;
+}
+
+.dark .schedule-calendar-wrapper .fc-list-day-cushion {
+  background: #0f172a !important;
+}
+
+.schedule-calendar-wrapper .fc-list-event:hover td {
+  background-color: rgba(99, 102, 241, 0.03) !important;
+}
+
+.dark .schedule-calendar-wrapper .fc-list-event:hover td {
+  background-color: rgba(99, 102, 241, 0.08) !important;
+}
+
+.schedule-calendar-wrapper .fc-list-event-dot {
+  border: 4px solid #6366f1 !important;
+}
+
