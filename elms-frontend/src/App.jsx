@@ -10,7 +10,6 @@ import CoursePage from './pages/course/CoursePage';
 import ClassPage from './pages/class/ClassPage';
 import ClassFormPage from './pages/class/ClassFormPage';
 import ClassroomPage from './pages/classroom/ClassroomPage';
-import Error403Page from './pages/Error403Page';
 import Error404Page from './pages/Error404Page';
 import StudentPage from './pages/student/StudentPage';
 import StudentFormPage from './pages/student/StudentFormPage';

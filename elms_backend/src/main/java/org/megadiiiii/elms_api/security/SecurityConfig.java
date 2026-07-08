@@ -59,6 +59,14 @@ public class SecurityConfig {
                         .requestMatchers("/api/courses/**").hasAnyRole("ADMIN", "TEACHER", "TA")
                         .requestMatchers("/api/classes/**").hasAnyRole("ADMIN", "TEACHER", "TA")
                         .requestMatchers("/api/students/**").hasAnyRole("ADMIN", "TEACHER", "TA")
+                        .requestMatchers(
+                                "/swagger-ui/**",
+                                "/v3/api-docs/**",
+                                "/swagger-ui.html",
+                                "/swagger-resources/**",
+                                "/webjars/**",
+                                "/error"
+                        ).permitAll()
                         .anyRequest().authenticated()
                 )
                 .exceptionHandling(exception -> exception

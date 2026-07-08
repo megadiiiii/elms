@@ -15,13 +15,13 @@ import { t } from "../../api/translation";
 const SchedulePage = () => {
   const navigate = useNavigate();
   const calendarRef = useRef(null);
-  
+
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [toast, setToast] = useState({ show: false, message: "", type: "success" });
-  
+
   const role = localStorage.getItem("role") || "STUDENT";
   const isAdmin = role === "ADMIN";
   const initialView = isAdmin ? "dayGridMonth" : "timeGridWeek";
@@ -129,13 +129,13 @@ const SchedulePage = () => {
   const renderEventContent = (eventInfo) => {
     const { room, classCode } = eventInfo.event.extendedProps;
     const color = eventInfo.event.backgroundColor || "#6366f1";
-    
+
     // For Month View (Compact single line view)
     if (eventInfo.view.type === "dayGridMonth") {
       return (
-        <div 
+        <div
           className="flex items-center gap-1.5 px-2 py-0.5 h-full w-full rounded-md text-[10px] border-l-2 hover:brightness-[0.95] dark:hover:brightness-[1.05] transition-all truncate select-none shadow-sm/50"
-          style={{ 
+          style={{
             borderLeftColor: color,
             backgroundColor: `${color}12`,
             color: color
@@ -143,7 +143,7 @@ const SchedulePage = () => {
         >
           <span className="truncate flex-1 font-bold">{eventInfo.event.title}</span>
           {room && (
-            <span 
+            <span
               className="text-[8px] font-mono font-bold px-1 rounded shrink-0"
               style={{ backgroundColor: `${color}1a` }}
             >
@@ -156,9 +156,9 @@ const SchedulePage = () => {
 
     // For Week / Day Views (Detailed card view)
     return (
-      <div 
+      <div
         className="flex flex-col p-1.5 h-full w-full overflow-hidden text-xs rounded-xl border border-transparent select-none transition-all hover:brightness-[0.97] dark:hover:brightness-[1.05] cursor-pointer"
-        style={{ 
+        style={{
           borderLeft: `3px solid ${color}`,
           backgroundColor: `${color}12`
         }}
@@ -166,18 +166,18 @@ const SchedulePage = () => {
         <div className="font-bold truncate text-[11px] text-slate-800 dark:text-slate-100 leading-tight">
           {eventInfo.event.title}
         </div>
-        
+
         {/* Compact details row: Class code & Room */}
         <div className="flex flex-wrap items-center gap-x-1.5 gap-y-0.5 mt-0.5 text-[9px] font-semibold text-slate-500 dark:text-slate-400">
           <span className="font-mono">{classCode}</span>
           {room && (
             <>
               <span className="opacity-50">•</span>
-              <span 
-                className="px-1 rounded text-[8px] font-bold shrink-0" 
-                style={{ 
+              <span
+                className="px-1 rounded text-[8px] font-bold shrink-0"
+                style={{
                   backgroundColor: `${color}1a`,
-                  color: color 
+                  color: color
                 }}
               >
                 {room}
@@ -185,7 +185,7 @@ const SchedulePage = () => {
             </>
           )}
         </div>
-        
+
         {/* Time row */}
         <div className="flex items-center gap-1 mt-1 text-[9px] font-medium text-slate-500 dark:text-slate-400">
           <span className="material-symbols-outlined text-[10px] shrink-0" style={{ color: color }}>schedule</span>
@@ -220,7 +220,7 @@ const SchedulePage = () => {
                     {capitalizeTitle(currentTitle)}
                   </h3>
                 </div>
-                
+
                 <div className="flex flex-wrap items-center gap-3">
                   {/* Navigation Group */}
                   <div className="flex items-center bg-slate-50 dark:bg-slate-950 border border-slate-200/60 dark:border-slate-800 rounded-xl p-1 shadow-sm">
@@ -250,31 +250,28 @@ const SchedulePage = () => {
                       <>
                         <button
                           onClick={() => handleViewChange("dayGridMonth")}
-                          className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all border-0 bg-transparent cursor-pointer ${
-                            currentView === "dayGridMonth"
+                          className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all border-0 bg-transparent cursor-pointer ${currentView === "dayGridMonth"
                               ? "bg-white dark:bg-slate-800 text-indigo-650 dark:text-indigo-400 shadow-sm"
                               : "text-slate-500 dark:text-slate-450 hover:text-slate-800 dark:hover:text-slate-200"
-                          }`}
+                            }`}
                         >
                           Tháng
                         </button>
                         <button
                           onClick={() => handleViewChange("timeGridWeek")}
-                          className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all border-0 bg-transparent cursor-pointer ${
-                            currentView === "timeGridWeek"
+                          className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all border-0 bg-transparent cursor-pointer ${currentView === "timeGridWeek"
                               ? "bg-white dark:bg-slate-800 text-indigo-650 dark:text-indigo-400 shadow-sm"
                               : "text-slate-500 dark:text-slate-450 hover:text-slate-800 dark:hover:text-slate-200"
-                          }`}
+                            }`}
                         >
                           Tuần
                         </button>
                         <button
                           onClick={() => handleViewChange("timeGridDay")}
-                          className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all border-0 bg-transparent cursor-pointer ${
-                            currentView === "timeGridDay"
+                          className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all border-0 bg-transparent cursor-pointer ${currentView === "timeGridDay"
                               ? "bg-white dark:bg-slate-800 text-indigo-650 dark:text-indigo-400 shadow-sm"
                               : "text-slate-500 dark:text-slate-450 hover:text-slate-800 dark:hover:text-slate-200"
-                          }`}
+                            }`}
                         >
                           Ngày
                         </button>
@@ -283,21 +280,19 @@ const SchedulePage = () => {
                       <>
                         <button
                           onClick={() => handleViewChange("timeGridWeek")}
-                          className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all border-0 bg-transparent cursor-pointer ${
-                            currentView === "timeGridWeek"
+                          className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all border-0 bg-transparent cursor-pointer ${currentView === "timeGridWeek"
                               ? "bg-white dark:bg-slate-800 text-indigo-650 dark:text-indigo-400 shadow-sm"
                               : "text-slate-500 dark:text-slate-450 hover:text-slate-800 dark:hover:text-slate-200"
-                          }`}
+                            }`}
                         >
                           Tuần
                         </button>
                         <button
                           onClick={() => handleViewChange("listWeek")}
-                          className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all border-0 bg-transparent cursor-pointer ${
-                            currentView === "listWeek"
+                          className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all border-0 bg-transparent cursor-pointer ${currentView === "listWeek"
                               ? "bg-white dark:bg-slate-800 text-indigo-650 dark:text-indigo-400 shadow-sm"
                               : "text-slate-500 dark:text-slate-450 hover:text-slate-800 dark:hover:text-slate-200"
-                          }`}
+                            }`}
                         >
                           Danh sách
                         </button>
@@ -366,12 +361,18 @@ const SchedulePage = () => {
               <div>
                 <span className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest block mb-0.5">Lớp học</span>
                 <div className="flex items-center gap-2 mt-0.5">
-                  <span className="text-sm font-black text-indigo-700 dark:text-indigo-400 hover:underline cursor-pointer" onClick={() => {
-                    const classId = selectedEvent.id.split("_")[0];
-                    navigate(`/classes/detail/${classId}`);
-                  }}>
-                    {selectedEvent.title}
-                  </span>
+                  {role !== "STUDENT" ? (
+                    <span className="text-sm font-black text-indigo-700 dark:text-indigo-400 hover:underline cursor-pointer" onClick={() => {
+                      const classId = selectedEvent.id.split("_")[0];
+                      navigate(`/classes/detail/${classId}`);
+                    }}>
+                      {selectedEvent.title}
+                    </span>
+                  ) : (
+                    <span className="text-sm font-black text-slate-800 dark:text-slate-200">
+                      {selectedEvent.title}
+                    </span>
+                  )}
                   <span className="font-mono text-[10px] bg-slate-200/50 dark:bg-slate-800 text-slate-600 dark:text-slate-300 px-1.5 py-0.5 rounded font-black">{selectedEvent.classCode}</span>
                 </div>
               </div>
@@ -406,17 +407,20 @@ const SchedulePage = () => {
               >
                 {t("close") || "Đóng"}
               </button>
-              <button
-                type="button"
-                onClick={() => {
-                  const classId = selectedEvent.id.split("_")[0];
-                  navigate(`/classes/detail/${classId}`);
-                }}
-                className="px-4 py-2 text-xs font-black text-white bg-indigo-600 hover:bg-indigo-700 border-0 rounded-xl cursor-pointer flex items-center gap-1.5"
-              >
-                <span className="material-symbols-outlined text-sm">groups</span>
-                Xem chi tiết lớp
-              </button>
+
+              {role !== "STUDENT" && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    const classId = selectedEvent.id.split("_")[0];
+                    navigate(`/classes/detail/${classId}`);
+                  }}
+                  className="px-4 py-2 text-xs font-black text-white bg-indigo-600 hover:bg-indigo-700 border-0 rounded-xl cursor-pointer flex items-center gap-1.5"
+                >
+                  <span className="material-symbols-outlined text-sm">groups</span>
+                  Xem chi tiết lớp
+                </button>
+              )}
             </div>
           </div>
         </Modal>
