@@ -96,6 +96,12 @@ const Sidebar = ({ isCollapsed, onToggle }) => {
                         <span className="material-symbols-outlined text-[22px]">calendar_month</span>
                         {!isCollapsed && <span>{t('timeSchedule')}</span>}
                     </Link>
+                    {role === 'STUDENT' && (
+                        <Link className={getNavLinkClass('/my-grades')} to="/my-grades" title={isCollapsed ? t('myGrades') : ""}>
+                            <span className="material-symbols-outlined text-[22px]">fact_check</span>
+                            {!isCollapsed && <span>{t('myGrades')}</span>}
+                        </Link>
+                    )}
                 </div>
             </nav>
         </aside>

@@ -14,6 +14,7 @@ import Error404Page from './pages/Error404Page';
 import StudentPage from './pages/student/StudentPage';
 import StudentFormPage from './pages/student/StudentFormPage';
 import StudentDetailPage from './pages/student/StudentDetailPage';
+import MyGradesPage from './pages/student/MyGradesPage';
 import ClassDetailPage from './pages/class/ClassDetailPage';
 import AttendancePage from './pages/class/AttendancePage';
 import GradePage from './pages/class/GradePage';
@@ -63,6 +64,7 @@ function App() {
 
                 <Route path="/materials" element={<MaterialsPage />} />
                 <Route path="/schedule" element={<SchedulePage />} />
+                <Route path="/my-grades" element={<MyGradesPage />} />
 
                 {/* Gõ bừa URL, chuyển tới trang báo lỗi 404 */}
                 <Route path="*" element={<Error404Page />} />
