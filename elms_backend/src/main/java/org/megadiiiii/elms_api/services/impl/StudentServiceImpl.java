@@ -15,6 +15,7 @@ import org.megadiiiii.elms_api.repository.StudentRepository;
 import org.megadiiiii.elms_api.repository.UserRepository;
 import org.megadiiiii.elms_api.services.EmailService;
 import org.megadiiiii.elms_api.services.StudentService;
+import org.megadiiiii.elms_api.services.AuditLogService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -38,6 +39,7 @@ public class StudentServiceImpl implements StudentService {
     private final StudentMapper studentMapper;
     private final PasswordGenerator passwordGenerator;
     private final EmailService emailService;
+    private final AuditLogService auditLogService;
 
     @Override
     public Page<StudentSummaryDTO> getAllStudentSummaries(int page, int size, String keyword) {
@@ -113,6 +115,17 @@ public class StudentServiceImpl implements StudentService {
         studentRepository.save(user); // Cascade saves the profile
 
         emailService.sendAccountInfo(user.getEmail(), user.getUsername(), rawPassword, role.getName().name());
+        
+        java.util.Map<String, Object> newMap = new java.util.LinkedHashMap<>();
+        newMap.put("fullName", user.getFullName());
+        newMap.put("username", user.getUsername());
+        newMap.put("email", user.getEmail());
+        newMap.put("phone", user.getPhone());
+        newMap.put("parentName", profile.getParentName());
+        newMap.put("parentPhone", profile.getParentPhone());
+        newMap.put("status", user.getStatus().name());
+
+        auditLogService.log("CREATE_STUDENT", "tạo tài khoản học viên mới: " + user.getFullName() + " (" + user.getUsername() + ").", "User", user.getId(), null, newMap);
     }
 
     @Override
@@ -128,6 +141,16 @@ public class StudentServiceImpl implements StudentService {
                 }
             });
         }
+
+        java.util.Map<String, Object> oldMap = new java.util.LinkedHashMap<>();
+        oldMap.put("fullName", user.getFullName());
+        oldMap.put("email", user.getEmail());
+        oldMap.put("phone", user.getPhone());
+        if (user.getStudentProfile() != null) {
+            oldMap.put("parentName", user.getStudentProfile().getParentName());
+            oldMap.put("parentPhone", user.getStudentProfile().getParentPhone());
+        }
+        oldMap.put("status", user.getStatus().name());
 
         String currentAvatar = user.getAvatar();
 
@@ -147,6 +170,18 @@ public class StudentServiceImpl implements StudentService {
         }
 
         studentRepository.save(user);
+
+        java.util.Map<String, Object> newMap = new java.util.LinkedHashMap<>();
+        newMap.put("fullName", user.getFullName());
+        newMap.put("email", user.getEmail());
+        newMap.put("phone", user.getPhone());
+        if (user.getStudentProfile() != null) {
+            newMap.put("parentName", user.getStudentProfile().getParentName());
+            newMap.put("parentPhone", user.getStudentProfile().getParentPhone());
+        }
+        newMap.put("status", user.getStatus().name());
+
+        auditLogService.log("UPDATE_STUDENT", "cập nhật tài khoản học viên: " + user.getFullName() + " (" + user.getUsername() + ").", "User", user.getId(), oldMap, newMap);
     }
 
     @Override
@@ -167,6 +202,7 @@ public class StudentServiceImpl implements StudentService {
         studentRepository.save(user);
 
         emailService.sendResetPassword(user.getEmail(), user.getUsername(), newRawPassword);
+        auditLogService.log("RESET_STUDENT_PASSWORD", "thiết lập lại mật khẩu cho học viên: " + user.getFullName() + " (" + user.getUsername() + ").");
     }
 
     @Override
@@ -185,6 +221,7 @@ public class StudentServiceImpl implements StudentService {
         }
 
         studentRepository.save(user);
+        auditLogService.log("TOGGLE_STUDENT_STATUS", (action.equals("Khóa") ? "khóa" : "mở khóa") + " tài khoản học viên: " + user.getFullName() + " (" + user.getUsername() + ").");
         return action;
     }
 

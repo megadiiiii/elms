@@ -3,12 +3,14 @@ package org.megadiiiii.elms_api.services.impl;
 import lombok.RequiredArgsConstructor;
 import org.megadiiiii.elms_api.dto.request.GradeRequestDTO;
 import org.megadiiiii.elms_api.dto.response.StudentGradeResponseDTO;
+import org.megadiiiii.elms_api.dto.response.MyGradeResponseDTO;
 import org.megadiiiii.elms_api.models.*;
 import org.megadiiiii.elms_api.repository.ClassRepository;
 import org.megadiiiii.elms_api.repository.GradeRepository;
 import org.megadiiiii.elms_api.repository.UserRepository;
 import org.megadiiiii.elms_api.services.EmailService;
 import org.megadiiiii.elms_api.services.GradeService;
+import org.megadiiiii.elms_api.services.AuditLogService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -26,6 +28,7 @@ public class GradeServiceImpl implements GradeService {
     private final ClassRepository classRepository;
     private final UserRepository userRepository;
     private final EmailService emailService;
+    private final AuditLogService auditLogService;
 
     @Override
     @Transactional(readOnly = true)
@@ -97,9 +100,16 @@ public class GradeServiceImpl implements GradeService {
             // Tìm điểm cũ hoặc tạo mới
             Optional<Grade> gradeOpt = gradeRepository.findByStudentProfileIdAndClazzIdAndGradeType(request.getStudentId(), classId, gradeType);
             Grade grade;
+            java.util.Map<String, Object> oldMap = new java.util.LinkedHashMap<>();
+            boolean isNew = !gradeOpt.isPresent();
 
             if (gradeOpt.isPresent()) {
                 grade = gradeOpt.get();
+                oldMap.put("listening", grade.getListening());
+                oldMap.put("speaking", grade.getSpeaking());
+                oldMap.put("reading", grade.getReading());
+                oldMap.put("writing", grade.getWriting());
+                oldMap.put("feedback", grade.getFeedback() == null ? "" : grade.getFeedback());
             } else {
                 grade = new Grade();
                 grade.setClazz(classEntity);
@@ -111,6 +121,7 @@ public class GradeServiceImpl implements GradeService {
                     throw new IllegalArgumentException("Học viên này không có hồ sơ học sinh!");
                 }
                 grade.setStudentProfile(user.getStudentProfile());
+                oldMap.put("status", "CHƯA_CÓ_ĐIỂM");
             }
 
             // Cập nhật điểm số 4 kỹ năng
@@ -128,9 +139,23 @@ public class GradeServiceImpl implements GradeService {
                 grade.setFinalGrade(roundToIelts(avg));
             }
             
-            grade.setFeedback(request.getFeedback());
+            grade.setFeedback(request.getFeedback() == null ? "" : request.getFeedback());
 
             gradeRepository.save(grade);
+
+            // Ghi nhận log thay đổi chi tiết của từng học sinh
+            java.util.Map<String, Object> newMap = new java.util.LinkedHashMap<>();
+            newMap.put("listening", grade.getListening());
+            newMap.put("speaking", grade.getSpeaking());
+            newMap.put("reading", grade.getReading());
+            newMap.put("writing", grade.getWriting());
+            newMap.put("feedback", grade.getFeedback());
+
+            String studentName = grade.getStudentProfile().getUser().getFullName();
+            String msg = (isNew ? "nhập điểm mới cho học viên " : "cập nhật điểm học viên ") 
+                    + studentName + " lớp " + classEntity.getClassName() + " (" + classEntity.getClassCode() + ").";
+
+            auditLogService.log("UPDATE_GRADE", msg, "Grade", grade.getId(), oldMap, newMap);
         }
     }
 
@@ -177,6 +202,7 @@ public class GradeServiceImpl implements GradeService {
         // Đánh dấu là đã liên hệ thành công
         grade.setContacted(true);
         gradeRepository.save(grade);
+        auditLogService.log("SEND_GRADE_REPORT", "gửi báo cáo điểm học viên " + student.getUser().getFullName() + " lớp " + classEntity.getClassName() + ".");
     }
 
     private double roundToIelts(double avg) {
@@ -189,5 +215,37 @@ public class GradeServiceImpl implements GradeService {
         } else {
             return floorVal + 1.0;
         }
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<MyGradeResponseDTO> getMyGrades(String username) {
+        User user = userRepository.findByUsername(username)
+                .orElseThrow(() -> new IllegalArgumentException("Không tìm thấy thông tin tài khoản!"));
+        
+        List<Grade> grades = gradeRepository.findByStudentProfileId(user.getId());
+        
+        return grades.stream().map(g -> {
+            ClassEntity clazz = g.getClazz();
+            String teacherName = "Chưa phân công";
+            if (clazz.getTeacher() != null && clazz.getTeacher().getUser() != null) {
+                teacherName = clazz.getTeacher().getUser().getFullName();
+            }
+            
+            return MyGradeResponseDTO.builder()
+                    .gradeId(g.getId())
+                    .classId(clazz.getId())
+                    .className(clazz.getClassName())
+                    .courseName(clazz.getCourse() != null ? clazz.getCourse().getCourseName() : "")
+                    .teacherName(teacherName)
+                    .gradeType(g.getGradeType())
+                    .listening(g.getListening())
+                    .speaking(g.getSpeaking())
+                    .reading(g.getReading())
+                    .writing(g.getWriting())
+                    .finalGrade(g.getFinalGrade())
+                    .feedback(g.getFeedback())
+                    .build();
+        }).collect(Collectors.toList());
     }
 }

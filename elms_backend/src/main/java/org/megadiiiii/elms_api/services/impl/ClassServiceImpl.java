@@ -13,6 +13,7 @@ import org.megadiiiii.elms_api.repository.CourseRepository;
 import org.megadiiiii.elms_api.repository.StaffProfileRepository;
 import org.megadiiiii.elms_api.repository.ClassroomRepository;
 import org.megadiiiii.elms_api.repository.StudentRepository;
+import org.megadiiiii.elms_api.services.AuditLogService;
 import org.megadiiiii.elms_api.services.ClassService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -20,7 +21,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -37,6 +37,7 @@ public class ClassServiceImpl implements ClassService {
     private final ClassMapper classMapper;
     private final ClassroomRepository classroomRepository;
     private final StudentRepository studentRepository;
+    private final AuditLogService auditLogService;
 
     @Override
     public Page<ClassSummaryResponseDTO> getClasses(int page, int size, String keyword, String status, Long courseId) {
@@ -156,6 +157,17 @@ public class ClassServiceImpl implements ClassService {
         }
 
         classRepository.save(clazz);
+        
+        java.util.Map<String, Object> newMap = new java.util.LinkedHashMap<>();
+        newMap.put("classCode", clazz.getClassCode());
+        newMap.put("className", clazz.getClassName());
+        newMap.put("maxStudents", clazz.getMaxStudents());
+        newMap.put("startDate", clazz.getStartDate() == null ? "" : clazz.getStartDate().toString());
+        newMap.put("totalSessions", clazz.getTotalSessions());
+        newMap.put("teacher", clazz.getTeacher() == null ? "Chưa phân công" : clazz.getTeacher().getUser().getFullName());
+        newMap.put("ta", clazz.getTa() == null ? "Chưa phân công" : clazz.getTa().getUser().getFullName());
+
+        auditLogService.log("CREATE_CLASS", "tạo mới lớp học: " + clazz.getClassName() + " (" + clazz.getClassCode() + ").", "ClassEntity", clazz.getId(), null, newMap);
     }
 
     @Override
@@ -163,6 +175,15 @@ public class ClassServiceImpl implements ClassService {
     public void updateClass(Long id, ClassRequestDTO dto) {
         ClassEntity clazz = classRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Không tìm thấy lớp học!"));
+
+        java.util.Map<String, Object> oldMap = new java.util.LinkedHashMap<>();
+        oldMap.put("classCode", clazz.getClassCode());
+        oldMap.put("className", clazz.getClassName());
+        oldMap.put("maxStudents", clazz.getMaxStudents());
+        oldMap.put("startDate", clazz.getStartDate() == null ? "" : clazz.getStartDate().toString());
+        oldMap.put("totalSessions", clazz.getTotalSessions());
+        oldMap.put("teacher", clazz.getTeacher() == null ? "Chưa phân công" : clazz.getTeacher().getUser().getFullName());
+        oldMap.put("ta", clazz.getTa() == null ? "Chưa phân công" : clazz.getTa().getUser().getFullName());
 
         if (dto.getClassName() == null || dto.getClassName().isBlank()) {
             throw new IllegalArgumentException("Tên lớp học không được để trống!");
@@ -257,6 +278,17 @@ public class ClassServiceImpl implements ClassService {
         }
 
         classRepository.save(clazz);
+
+        java.util.Map<String, Object> newMap = new java.util.LinkedHashMap<>();
+        newMap.put("classCode", clazz.getClassCode());
+        newMap.put("className", clazz.getClassName());
+        newMap.put("maxStudents", clazz.getMaxStudents());
+        newMap.put("startDate", clazz.getStartDate() == null ? "" : clazz.getStartDate().toString());
+        newMap.put("totalSessions", clazz.getTotalSessions());
+        newMap.put("teacher", clazz.getTeacher() == null ? "Chưa phân công" : clazz.getTeacher().getUser().getFullName());
+        newMap.put("ta", clazz.getTa() == null ? "Chưa phân công" : clazz.getTa().getUser().getFullName());
+
+        auditLogService.log("UPDATE_CLASS", "cập nhật lớp học: " + clazz.getClassName() + " (" + clazz.getClassCode() + ").", "ClassEntity", clazz.getId(), oldMap, newMap);
     }
 
     @Override
@@ -270,6 +302,7 @@ public class ClassServiceImpl implements ClassService {
         }
 
         classRepository.delete(clazz);
+        auditLogService.log("DELETE_CLASS", "xóa lớp học: " + clazz.getClassName() + " (" + clazz.getClassCode() + ").");
     }
 
     @Override
@@ -358,6 +391,15 @@ public class ClassServiceImpl implements ClassService {
 
         clazz.getStudents().add(student);
         classRepository.save(clazz);
+
+        // Audit Log
+        java.util.Map<String, Object> newMap = new java.util.LinkedHashMap<>();
+        newMap.put("classCode", clazz.getClassCode());
+        newMap.put("className", clazz.getClassName());
+        newMap.put("studentName", student.getUser().getFullName());
+        newMap.put("studentCode", student.getStudentCode());
+
+        auditLogService.log("ENROLL_STUDENT", "thêm học viên " + student.getUser().getFullName() + " vào lớp " + clazz.getClassName() + " (" + clazz.getClassCode() + ").", "ClassEntity", clazz.getId(), null, newMap);
     }
 
     @Override
@@ -403,6 +445,21 @@ public class ClassServiceImpl implements ClassService {
             currentStudents++;
         }
         classRepository.save(clazz);
+
+        // Audit Log for each enrolled student
+        for (Long studentId : studentIds) {
+            User u = studentRepository.findById(studentId).orElse(null);
+            if (u != null && u.getStudentProfile() != null) {
+                StudentProfile sp = u.getStudentProfile();
+                java.util.Map<String, Object> newMap = new java.util.LinkedHashMap<>();
+                newMap.put("classCode", clazz.getClassCode());
+                newMap.put("className", clazz.getClassName());
+                newMap.put("studentName", sp.getUser().getFullName());
+                newMap.put("studentCode", sp.getStudentCode());
+
+                auditLogService.log("ENROLL_STUDENT", "thêm học viên " + sp.getUser().getFullName() + " vào lớp " + clazz.getClassName() + " (" + clazz.getClassCode() + ").", "ClassEntity", clazz.getId(), null, newMap);
+            }
+        }
     }
 
     @Override
@@ -415,12 +472,26 @@ public class ClassServiceImpl implements ClassService {
             throw new IllegalArgumentException("Lớp học này hiện chưa có học viên nào!");
         }
 
+        StudentProfile studentToRemove = clazz.getStudents().stream()
+                .filter(s -> s.getId().equals(studentId))
+                .findFirst().orElse(null);
+
         boolean removed = clazz.getStudents().removeIf(s -> s.getId().equals(studentId));
         if (!removed) {
             throw new IllegalArgumentException("Học viên không có trong lớp học này!");
         }
 
         classRepository.save(clazz);
+
+        if (studentToRemove != null) {
+            java.util.Map<String, Object> oldMap = new java.util.LinkedHashMap<>();
+            oldMap.put("classCode", clazz.getClassCode());
+            oldMap.put("className", clazz.getClassName());
+            oldMap.put("studentName", studentToRemove.getUser().getFullName());
+            oldMap.put("studentCode", studentToRemove.getStudentCode());
+
+            auditLogService.log("REMOVE_STUDENT", "xóa học viên " + studentToRemove.getUser().getFullName() + " khỏi lớp " + clazz.getClassName() + " (" + clazz.getClassCode() + ").", "ClassEntity", clazz.getId(), oldMap, null);
+        }
     }
 
     @Override
@@ -474,5 +545,16 @@ public class ClassServiceImpl implements ClassService {
 
         classRepository.save(sourceClass);
         classRepository.save(targetClass);
+
+        // Audit Log
+        java.util.Map<String, Object> oldMap = new java.util.LinkedHashMap<>();
+        oldMap.put("fromClass", sourceClass.getClassName() + " (" + sourceClass.getClassCode() + ")");
+        oldMap.put("studentName", student.getUser().getFullName());
+
+        java.util.Map<String, Object> newMap = new java.util.LinkedHashMap<>();
+        newMap.put("toClass", targetClass.getClassName() + " (" + targetClass.getClassCode() + ")");
+        newMap.put("studentName", student.getUser().getFullName());
+
+        auditLogService.log("TRANSFER_STUDENT", "chuyển học viên " + student.getUser().getFullName() + " từ lớp " + sourceClass.getClassName() + " sang lớp " + targetClass.getClassName() + ".", "ClassEntity", targetClass.getId(), oldMap, newMap);
     }
 }

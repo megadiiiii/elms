@@ -10,7 +10,7 @@ import java.time.LocalTime;
 @Getter
 @Setter
 @Table(name = "schedules")
-public class Schedule {
+public class Schedule extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

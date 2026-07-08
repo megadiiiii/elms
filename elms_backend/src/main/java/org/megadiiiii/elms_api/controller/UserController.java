@@ -1,12 +1,15 @@
 package org.megadiiiii.elms_api.controller;
 
 import org.megadiiiii.elms_api.dto.response.UserDetailDTO;
+import org.megadiiiii.elms_api.dto.response.MyGradeResponseDTO;
 import org.megadiiiii.elms_api.security.CustomUserDetails;
 import org.megadiiiii.elms_api.services.UserService;
+import org.megadiiiii.elms_api.services.GradeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
+import java.util.List;
 
 /**
  * Controller cung cấp các API liên quan đến thông tin và tài khoản của người dùng.
@@ -19,6 +22,7 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 
     private final UserService userService;
+    private final GradeService gradeService;
 
     /**
      * API truy xuất thông tin hồ sơ cá nhân (Profile) của người dùng hiện tại đang đăng nhập.
@@ -78,5 +82,17 @@ public class UserController {
         } catch (IllegalArgumentException e) {
             return ResponseEntity.badRequest().body(java.util.Map.of("message", e.getMessage()));
         }
+    }
+
+    /**
+     * API lấy danh sách điểm học tập của học viên hiện tại đang đăng nhập.
+     */
+    @GetMapping("/grades")
+    public ResponseEntity<List<MyGradeResponseDTO>> getCurrentUserGrades(
+            @AuthenticationPrincipal final CustomUserDetails userDetails
+    ) {
+        String username = userDetails.getUsername();
+        List<MyGradeResponseDTO> grades = gradeService.getMyGrades(username);
+        return ResponseEntity.ok(grades);
     }
 }

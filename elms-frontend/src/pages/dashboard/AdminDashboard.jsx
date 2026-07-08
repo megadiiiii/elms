@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { t } from '../../api/translation';
 
-const AdminDashboard = ({ stats, recentLogs }) => {
+const AdminDashboard = ({ stats }) => {
     const metrics = [
         { 
             id: 1, 
@@ -48,7 +48,7 @@ const AdminDashboard = ({ stats, recentLogs }) => {
 
     return (
         <div className="space-y-6">
-            {/* Grid Stats Cards - Hỗ trợ hiển thị 2 hàng và có sẵn ô chờ cho thông số mới */}
+            {/* Grid Stats Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 {metrics.map((item) => (
                     <Link 
@@ -67,41 +67,6 @@ const AdminDashboard = ({ stats, recentLogs }) => {
                         </div>
                     </Link>
                 ))}
-            </div>
-
-            {/* Hoạt động hệ thống */}
-            <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
-                <div className="flex items-center gap-2 mb-6">
-                    <span className="material-symbols-outlined text-slate-400 text-xl">history</span>
-                    <h3 className="text-sm font-bold text-slate-800 uppercase tracking-wider">
-                        {t("systemActivityLog")}
-                    </h3>
-                </div>
-                
-                <div className="space-y-4 max-h-80 overflow-y-auto pr-2">
-                    {recentLogs && recentLogs.length > 0 ? (
-                        recentLogs.map((log, idx) => (
-                            <div key={idx} className="flex items-start gap-4 p-3 hover:bg-slate-50/55 rounded-xl border border-transparent hover:border-slate-100 transition-colors">
-                                <div className="mt-0.5">
-                                    <span className="px-2.5 py-0.5 text-[10px] font-bold rounded-md bg-slate-100 text-slate-600 uppercase tracking-wider">
-                                        {log.actionType}
-                                    </span>
-                                </div>
-                                <div className="flex-1 min-w-0">
-                                    <p className="text-sm font-medium text-slate-700 leading-snug">{log.message}</p>
-                                    <span className="text-[10px] text-slate-400 font-medium mt-1 block">
-                                        {log.createdAt}
-                                    </span>
-                                </div>
-                            </div>
-                        ))
-                    ) : (
-                        <div className="text-center py-12 border border-dashed border-slate-100 rounded-xl">
-                            <span className="material-symbols-outlined text-slate-300 text-3xl mb-2">info</span>
-                            <p className="text-xs text-slate-400 font-medium">{t("noActivitiesFound")}</p>
-                        </div>
-                    )}
-                </div>
             </div>
         </div>
     );

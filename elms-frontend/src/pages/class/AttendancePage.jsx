@@ -228,12 +228,6 @@ const AttendancePage = () => {
                 <span className="material-symbols-outlined text-base">arrow_back</span>
                 Quay lại
               </button>
-
-              {isTA && isEditing && (
-                <span className="px-2.5 py-1 rounded-lg text-[10px] font-black uppercase tracking-wider bg-indigo-50 text-indigo-700 dark:bg-indigo-950/40 dark:text-indigo-400 border border-indigo-100/60 dark:border-indigo-900/40">
-                  Chế độ: Điểm danh
-                </span>
-              )}
             </div>
 
             <div className="flex flex-wrap items-center gap-3 justify-end">

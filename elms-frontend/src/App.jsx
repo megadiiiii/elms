@@ -20,6 +20,7 @@ import AttendancePage from './pages/class/AttendancePage';
 import GradePage from './pages/class/GradePage';
 import SchedulePage from './pages/schedule/SchedulePage';
 import MaterialsPage from './pages/course/MaterialsPage';
+import AuditLogPage from './pages/audit/AuditLogPage';
 
 function App() {
     return (
@@ -42,6 +43,7 @@ function App() {
 
                 {/* Định tuyến màn hình quản lý phòng học */}
                 <Route path="/admin/classrooms" element={<ClassroomPage />} />
+                <Route path="/admin/audit-logs" element={<AuditLogPage />} />
 
                 {/* Định tuyến trang cá nhân */}
                 <Route path="/profile" element={<ProfilePage />} />

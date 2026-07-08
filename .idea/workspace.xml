@@ -59,80 +59,46 @@
       <change afterPath="$PROJECT_DIR$/../../DSA/DSA_JAVA/DSA_JAVA.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../DSA/Practice/Practice.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../DSA/Practice/out/production/Practice/Practice.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_api.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/config/DataInit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/config/PasswordGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/config/WebConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/constant/AttendanceStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/constant/ClassStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/constant/CourseStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/constant/RoleType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/constant/SessionStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/constant/UserStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/controller/AuthController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/controller/DashboardController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/controller/StaffController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/dto/request/LoginRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/dto/request/StaffRequestDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/dto/response/AuthResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/dto/response/ClassSummaryResponseDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/dto/response/CourseDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/dto/response/DashboardStatsResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/dto/response/RoleDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/dto/response/ScheduleViewDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/dto/response/StaffDetailDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/dto/response/StaffSummaryDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/dto/response/StudentAttendanceViewDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/dto/response/StudentDetailDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/dto/response/StudentSummaryDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/dto/response/UserDetailDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/mappers/StaffMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/models/Attendance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/models/ClassEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/models/ClassSession.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/models/Course.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/models/Grade.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/models/LessonMaterial.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/models/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/models/Schedule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/models/StaffProfile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/models/StudentProfile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/models/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/repository/AttendanceRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/repository/ClassSessionRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/repository/CourseRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/repository/GradeRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/repository/LessonMaterialRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/repository/RoleRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/repository/StaffRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/repository/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/security/CustomUserDetails.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/security/JwtAuthenticationFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/security/JwtTokenProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/security/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/security/UserDetailsServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/services/DashboardService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/services/EmailService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/services/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/services/impl/EmailServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/services/impl/UserDetailsServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/services/impl/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/resources/static/images/default-avatar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/resources/static/js/countries.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elms_backend/src/main/resources/static/js/materials.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../SP/XSTK_SP/XSTK_SP.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../exam/.idea/exam.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../../NCKH/.idea/NCKH.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../../Network/.idea/Network.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../HTML/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../HTML/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elms-frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/elms-frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elms-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/elms-frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elms-frontend/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/elms-frontend/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elms-frontend/src/api/translation.js" beforeDir="false" afterPath="$PROJECT_DIR$/elms-frontend/src/api/translation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elms-frontend/src/components/Sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/elms-frontend/src/components/Sidebar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elms-frontend/src/pages/class/AttendancePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/elms-frontend/src/pages/class/AttendancePage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elms-frontend/src/pages/class/GradePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/elms-frontend/src/pages/class/GradePage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elms-frontend/src/pages/dashboard/AdminDashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/elms-frontend/src/pages/dashboard/AdminDashboard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elms-frontend/src/pages/dashboard/StudentDashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/elms-frontend/src/pages/dashboard/StudentDashboard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elms_backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/elms_backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/config/DataInit.java" beforeDir="false" afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/config/DataInit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/controller/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/controller/DashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/models/Attendance.java" beforeDir="false" afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/models/Attendance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/models/ClassEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/models/ClassEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/models/ClassSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/models/ClassSession.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/models/Classroom.java" beforeDir="false" afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/models/Classroom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/models/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/models/Course.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/models/Grade.java" beforeDir="false" afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/models/Grade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/models/LessonMaterial.java" beforeDir="false" afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/models/LessonMaterial.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/models/Schedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/models/Schedule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/models/StaffProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/models/StaffProfile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/models/StudentProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/models/StudentProfile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/services/DashboardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/services/DashboardService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/services/GradeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/services/GradeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/services/impl/ClassServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/services/impl/ClassServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/services/impl/DashboardServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/services/impl/DashboardServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/services/impl/GradeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/services/impl/GradeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/services/impl/StaffServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/services/impl/StaffServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/services/impl/StudentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/services/impl/StudentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/avatars/37db4a90-1136-4511-8370-b89b95c84d40.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +120,13 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -199,7 +171,7 @@
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;Spring Boot.ElmsApiApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;api&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/IS/Java/PJ/elms_api/elms_backend/src/main/java/org/megadiiiii/elms_api&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -268,7 +240,9 @@
       <workItem from="1782954550845" duration="731000" />
       <workItem from="1783233401916" duration="7914000" />
       <workItem from="1783306770012" duration="22000" />
-      <workItem from="1783430287897" duration="8451000" />
+      <workItem from="1783430287897" duration="9423000" />
+      <workItem from="1783475406176" duration="4846000" />
+      <workItem from="1783526535384" duration="294000" />
     </task>
     <servers />
   </component>

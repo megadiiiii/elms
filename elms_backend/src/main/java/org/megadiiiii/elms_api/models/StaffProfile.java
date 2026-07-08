@@ -10,7 +10,7 @@ import lombok.*;
 @Builder
 @Entity
 @Table(name = "staff_profiles")
-public class StaffProfile {
+public class StaffProfile extends BaseEntity {
 
     @Id
     private Long id;

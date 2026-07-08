@@ -13,7 +13,7 @@ import java.util.List;
 @Setter
 @Entity
 @Table(name = "student_profiles")
-public class StudentProfile {
+public class StudentProfile extends BaseEntity {
     @Id
     private Long id;
 

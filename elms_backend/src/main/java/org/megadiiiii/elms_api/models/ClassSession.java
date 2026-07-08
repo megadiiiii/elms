@@ -17,7 +17,7 @@ import java.time.LocalTime;
 
 @Entity
 @Table(name = "class_sessions")
-public class ClassSession {
+public class ClassSession extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

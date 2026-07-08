@@ -15,6 +15,7 @@ import org.megadiiiii.elms_api.repository.StaffRepository;
 import org.megadiiiii.elms_api.repository.UserRepository;
 import org.megadiiiii.elms_api.services.EmailService;
 import org.megadiiiii.elms_api.services.StaffService;
+import org.megadiiiii.elms_api.services.AuditLogService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -40,6 +41,7 @@ public class StaffServiceImpl implements StaffService {
     private final StaffMapper staffMapper;
     private final PasswordGenerator passwordGenerator;
     private final EmailService emailService;
+    private final AuditLogService auditLogService;
 
 
     @Override
@@ -100,6 +102,16 @@ public class StaffServiceImpl implements StaffService {
         user.setStaffProfile(profile);
         staffRepository.save(user); // Cascade sẽ tự lưu profile
         emailService.sendAccountInfo(user.getEmail(), user.getUsername(), rawPassword, role.getName().name());
+        
+        java.util.Map<String, Object> newMap = new java.util.LinkedHashMap<>();
+        newMap.put("fullName", user.getFullName());
+        newMap.put("username", user.getUsername());
+        newMap.put("email", user.getEmail());
+        newMap.put("phone", user.getPhone());
+        newMap.put("role", role.getName().name());
+        newMap.put("status", user.getStatus().name());
+
+        auditLogService.log("CREATE_STAFF", "tạo tài khoản nhân viên mới: " + user.getFullName() + " (" + user.getUsername() + ") với vai trò " + role.getName().name() + ".", "User", user.getId(), null, newMap);
     }
 
     @Override
@@ -126,6 +138,13 @@ public class StaffServiceImpl implements StaffService {
             user.setRole(role);
         }
 
+        java.util.Map<String, Object> oldMap = new java.util.LinkedHashMap<>();
+        oldMap.put("fullName", user.getFullName());
+        oldMap.put("email", user.getEmail());
+        oldMap.put("phone", user.getPhone());
+        oldMap.put("role", user.getRole() == null ? "" : user.getRole().getName().name());
+        oldMap.put("status", user.getStatus().name());
+
         // 2. GHIM LẠI ẢNH CŨ TỪ USER
         String currentAvatar = user.getAvatar();
 
@@ -147,6 +166,15 @@ public class StaffServiceImpl implements StaffService {
         }
 
         staffRepository.save(user);
+
+        java.util.Map<String, Object> newMap = new java.util.LinkedHashMap<>();
+        newMap.put("fullName", user.getFullName());
+        newMap.put("email", user.getEmail());
+        newMap.put("phone", user.getPhone());
+        newMap.put("role", user.getRole() == null ? "" : user.getRole().getName().name());
+        newMap.put("status", user.getStatus().name());
+
+        auditLogService.log("UPDATE_STAFF", "cập nhật tài khoản nhân viên: " + user.getFullName() + " (" + user.getUsername() + ").", "User", user.getId(), oldMap, newMap);
     }
 
     @Override
@@ -202,6 +230,7 @@ public class StaffServiceImpl implements StaffService {
 
         // 3. Gửi mail (Dùng lại hàm sendEmail cũ)
         emailService.sendResetPassword(user.getEmail(), user.getUsername(), newRawPassword);
+        auditLogService.log("RESET_STAFF_PASSWORD", "thiết lập lại mật khẩu cho nhân viên: " + user.getFullName() + " (" + user.getUsername() + ").");
     }
 
     @Override
@@ -220,6 +249,7 @@ public class StaffServiceImpl implements StaffService {
         }
 
         staffRepository.save(user);
+        auditLogService.log("TOGGLE_STAFF_STATUS", (action.equals("Khóa") ? "khóa" : "mở khóa") + " tài khoản nhân viên: " + user.getFullName() + " (" + user.getUsername() + ").");
         return action; // Trả về để Controller dùng [cite: 2026-03-24]
     }
 

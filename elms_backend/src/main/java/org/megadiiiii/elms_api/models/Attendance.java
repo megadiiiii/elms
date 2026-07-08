@@ -3,6 +3,7 @@ package org.megadiiiii.elms_api.models;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import org.megadiiiii.elms_api.constant.AttendanceStatus;
 
 import java.time.LocalDate;
@@ -10,7 +11,8 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "attendance")
 @Data
-public class Attendance {
+@EqualsAndHashCode(callSuper = true)
+public class Attendance extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

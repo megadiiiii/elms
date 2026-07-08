@@ -57,6 +57,10 @@ const Sidebar = ({ isCollapsed, onToggle }) => {
                             <span className="material-symbols-outlined text-[22px]">meeting_room</span>
                             {!isCollapsed && <span>{t('classroomManagement')}</span>}
                         </Link>
+                        <Link className={getNavLinkClass('/admin/audit-logs')} to="/admin/audit-logs" title={isCollapsed ? t('systemActivityLog') : ""}>
+                            <span className="material-symbols-outlined text-[22px]">history</span>
+                            {!isCollapsed && <span>{t('systemActivityLog')}</span>}
+                        </Link>
                     </div>
                 )}
 

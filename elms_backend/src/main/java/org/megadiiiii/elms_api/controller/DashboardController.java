@@ -26,8 +26,8 @@ public class DashboardController {
         // Nhét cục đếm số lượng vào key "stats"
         responseData.put("stats", dashboardService.getAdminStats());
 
-        // Nhét mảng log trống hoặc mock vào key "recentLogs" để AdminDashboard không bị crash
-        responseData.put("recentLogs", new ArrayList<>());
+        // Nhét mảng log thực tế từ database vào key "recentLogs"
+        responseData.put("recentLogs", dashboardService.getRecentLogs());
 
         return ResponseEntity.ok(responseData);
     }

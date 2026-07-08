@@ -15,7 +15,7 @@ import java.util.List;
 @AllArgsConstructor
 @Entity
 @Table(name = "courses") // Đổi từ "course" sang "courses" cho đồng bộ [cite: 2026-03-24]
-public class Course {
+public class Course extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

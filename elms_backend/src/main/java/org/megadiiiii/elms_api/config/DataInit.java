@@ -1,6 +1,7 @@
 package org.megadiiiii.elms_api.config; // Đổi chuẩn package mới
 
 import org.megadiiiii.elms_api.constant.RoleType;
+import org.megadiiiii.elms_api.constant.UserStatus;
 import org.megadiiiii.elms_api.models.Role;
 import org.megadiiiii.elms_api.models.StaffProfile;
 import org.megadiiiii.elms_api.models.User;
@@ -10,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
-import org.megadiiiii.elms_api.constant.UserStatus;
 
 @Component
 public class DataInit implements CommandLineRunner {
@@ -59,6 +59,6 @@ public class DataInit implements CommandLineRunner {
             Role role = new Role();
             role.setName(name);
             roleRepository.save(role);
-        }
+           }
     }
 }

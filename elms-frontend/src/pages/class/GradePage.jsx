@@ -64,7 +64,7 @@ const GradePage = () => {
 
         // Clone student object
         const updated = { ...s };
-        
+
         if (field === "feedback") {
           updated.feedback = value;
         } else {
@@ -72,7 +72,7 @@ const GradePage = () => {
           let numVal = value === "" ? "" : parseFloat(value);
           if (numVal !== "" && (isNaN(numVal) || numVal < 0)) numVal = 0;
           if (numVal !== "" && numVal > 10) numVal = 10;
-          
+
           updated[field] = numVal;
 
           // Auto calculate final grade if main skills are modified
@@ -81,7 +81,7 @@ const GradePage = () => {
             const speak = field === "speaking" ? numVal : (s.speaking || 0);
             const read = field === "reading" ? numVal : (s.reading || 0);
             const write = field === "writing" ? numVal : (s.writing || 0);
-            
+
             // Round to IELTS standard
             const avg = ((parseFloat(list) || 0) + (parseFloat(speak) || 0) + (parseFloat(read) || 0) + (parseFloat(write) || 0)) / 4.0;
             const floorVal = Math.floor(avg);
@@ -125,7 +125,7 @@ const GradePage = () => {
 
       await axiosClient.post(`/classes/${classId}/grades?type=${gradeType}`, payload);
       showToast("Lưu bảng điểm thành công!", "success");
-      
+
       // Re-fetch grades to update gradeIds in UI (so email buttons unlock)
       const gradesRes = await axiosClient.get(`/classes/${classId}/grades?type=${gradeType}`);
       setStudents(gradesRes.data);
@@ -142,7 +142,7 @@ const GradePage = () => {
     try {
       await axiosClient.post(`/classes/${classId}/grades/${studentId}/send-report?type=${gradeType}`);
       showToast("Gửi email báo điểm thành công!", "success");
-      
+
       // Update isContacted status locally
       setStudents((prev) =>
         prev.map((s) => (s.studentId === studentId ? { ...s, isContacted: true } : s))
@@ -168,7 +168,7 @@ const GradePage = () => {
     : 0.0;
   const totalCount = students.length;
   const sentCount = activeGrades.filter(s => s.isContacted).length;
-  
+
   const distExcellent = activeGrades.filter(s => s.finalGrade >= 8.0).length;
   const distGood = activeGrades.filter(s => s.finalGrade >= 6.5 && s.finalGrade < 8.0).length;
   const distAverage = activeGrades.filter(s => s.finalGrade >= 5.0 && s.finalGrade < 6.5).length;
@@ -222,35 +222,27 @@ const GradePage = () => {
                 <span className="material-symbols-outlined text-base">arrow_back</span>
                 {t("back") || "Quay lại"}
               </button>
-              
-              {isTeacher && (
-                <span className="px-2.5 py-1 rounded-lg text-[10px] font-black uppercase tracking-wider bg-indigo-50 text-indigo-700 dark:bg-indigo-950/40 dark:text-indigo-400 border border-indigo-100/60 dark:border-indigo-900/40">
-                  Chế độ: Chấm điểm
-                </span>
-              )}
             </div>
-            
+
             {/* Segmented Control Filter */}
             <div className="flex items-center bg-slate-50 dark:bg-slate-950 border border-slate-200/60 dark:border-slate-800 rounded-xl p-1 max-w-max">
               <button
                 type="button"
                 onClick={() => setGradeType("REGULAR")}
-                className={`px-4.5 py-1.5 rounded-lg text-xs font-bold transition-all border-0 bg-transparent cursor-pointer ${
-                  gradeType === "REGULAR"
+                className={`px-4.5 py-1.5 rounded-lg text-xs font-bold transition-all border-0 bg-transparent cursor-pointer ${gradeType === "REGULAR"
                     ? "bg-white dark:bg-slate-800 text-indigo-600 dark:text-indigo-400"
                     : "text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200"
-                }`}
+                  }`}
               >
                 Điểm thường xuyên
               </button>
               <button
                 type="button"
                 onClick={() => setGradeType("FINAL")}
-                className={`px-4.5 py-1.5 rounded-lg text-xs font-bold transition-all border-0 bg-transparent cursor-pointer ${
-                  gradeType === "FINAL"
+                className={`px-4.5 py-1.5 rounded-lg text-xs font-bold transition-all border-0 bg-transparent cursor-pointer ${gradeType === "FINAL"
                     ? "bg-white dark:bg-slate-800 text-indigo-600 dark:text-indigo-400"
                     : "text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200"
-                }`}
+                  }`}
               >
                 Điểm cuối khóa
               </button>
@@ -337,8 +329,8 @@ const GradePage = () => {
                   <tbody className="divide-y divide-slate-100 dark:divide-slate-850">
                     {filteredStudents.length > 0 ? (
                       filteredStudents.map((student, idx) => (
-                        <tr 
-                          key={student.studentId} 
+                        <tr
+                          key={student.studentId}
                           onClick={() => setSelectedStudent(student)}
                           className="hover:bg-slate-50/40 dark:hover:bg-slate-800/20 transition-colors cursor-pointer group"
                         >
@@ -346,7 +338,7 @@ const GradePage = () => {
                           <td className="p-4 text-center text-xs font-bold text-slate-400 dark:text-slate-500">
                             {idx + 1}
                           </td>
-                          
+
                           {/* Student Identity Card */}
                           <td className="p-4">
                             <div className="flex items-center gap-3">
@@ -484,11 +476,10 @@ const GradePage = () => {
                                 type="button"
                                 disabled={sendingMailId !== null}
                                 onClick={() => handleSendReport(student.studentId)}
-                                className={`px-3 py-1 rounded-xl text-[10px] font-bold uppercase border cursor-pointer transition-all flex items-center justify-center gap-1.2 mx-auto ${
-                                  student.isContacted
+                                className={`px-3 py-1 rounded-xl text-[10px] font-bold uppercase border cursor-pointer transition-all flex items-center justify-center gap-1.2 mx-auto ${student.isContacted
                                     ? "bg-slate-50 text-slate-655 border-slate-200 hover:bg-slate-100 hover:text-slate-800 dark:bg-slate-800 dark:text-slate-300 dark:border-slate-700"
                                     : "bg-indigo-50 text-indigo-700 border-indigo-200/50 hover:bg-indigo-100/50 dark:bg-indigo-950/20 dark:text-indigo-400 dark:border-indigo-900/30 font-black"
-                                }`}
+                                  }`}
                               >
                                 {sendingMailId === student.studentId ? (
                                   <svg className="animate-spin h-3.5 w-3.5 text-current" fill="none" viewBox="0 0 24 24">
@@ -505,7 +496,7 @@ const GradePage = () => {
                                 )}
                               </button>
                             ) : (
-                              <span 
+                              <span
                                 className="text-[10px] font-bold text-slate-300 dark:text-slate-700 select-none uppercase tracking-wider"
                               >
                                 Chờ chấm
@@ -539,7 +530,7 @@ const GradePage = () => {
               >
                 {isTeacher ? "Hủy bỏ" : "Đóng"}
               </button>
-              
+
               {isTeacher && (
                 <button
                   type="submit"
@@ -569,11 +560,11 @@ const GradePage = () => {
 
       {/* Slide-out Drawer Detail for Selected Student */}
       {selectedStudent && (
-        <div 
+        <div
           className="fixed inset-0 bg-slate-950/40 dark:bg-slate-950/60 backdrop-blur-xs z-50 flex justify-end animate-fade-in"
           onClick={() => setSelectedStudent(null)}
         >
-          <div 
+          <div
             className="w-full max-w-md bg-white dark:bg-slate-900 h-full shadow-2xl p-6 flex flex-col justify-between overflow-y-auto animate-slide-in-right border-l border-slate-100 dark:border-slate-850"
             onClick={(e) => e.stopPropagation()}
           >
@@ -581,7 +572,7 @@ const GradePage = () => {
             <div className="space-y-5">
               <div className="flex items-center justify-between">
                 <h3 className="text-sm font-black text-slate-800 dark:text-slate-100">Chi tiết học tập học viên</h3>
-                <button 
+                <button
                   onClick={() => setSelectedStudent(null)}
                   className="p-1 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-850 text-slate-400 hover:text-slate-600 transition-colors border-0 bg-transparent cursor-pointer"
                 >
@@ -717,7 +708,7 @@ const GradePage = () => {
               >
                 Đóng
               </button>
-              
+
               {selectedStudent.gradeId ? (
                 <button
                   type="button"
