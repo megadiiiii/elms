@@ -5,6 +5,8 @@ import org.megadiiiii.elms_api.dto.response.StudentDetailDTO;
 import org.megadiiiii.elms_api.dto.response.StudentSummaryDTO;
 import org.springframework.data.domain.Page;
 
+import java.util.List;
+
 public interface StudentService {
     Page<StudentSummaryDTO> getAllStudentSummaries(int page, int size, String keyword);
 
@@ -22,5 +24,5 @@ public interface StudentService {
 
     String toggleStudentStatus(Long id);
 
-    java.util.List<StudentSummaryDTO> searchActiveStudentsForAutocomplete(String keyword);
+    List<StudentSummaryDTO> searchActiveStudentsForAutocomplete(String keyword);
 }

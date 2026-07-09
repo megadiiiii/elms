@@ -268,7 +268,7 @@ const GradePage = () => {
               <span className="text-[10px] font-bold uppercase text-slate-400 dark:text-slate-500 tracking-wider">Điểm TB cả lớp (Overall)</span>
               <div className="flex items-baseline gap-2 mt-2">
                 <span className="text-3xl font-extrabold text-slate-800 dark:text-slate-100">{classAvg.toFixed(1)}</span>
-                <span className="text-xs font-bold text-slate-450">/ 10.0</span>
+                <span className="text-xs font-bold text-slate-455">/ 9.0</span>
               </div>
             </div>
 
@@ -620,7 +620,7 @@ const GradePage = () => {
                     { key: "writing", name: "Writing (Viết)", color: "bg-indigo-500" },
                   ].map(skill => {
                     const val = selectedStudent[skill.key] || 0.0;
-                    const percentage = Math.min((val / 10) * 100, 100);
+                    const percentage = Math.min((val / 9) * 100, 100);
                     return (
                       <div key={skill.key} className="space-y-1">
                         <div className="flex justify-between text-xs font-bold text-slate-600 dark:text-slate-355">

@@ -1,7 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { t } from '../../api/translation';
 
 const TeacherDashboard = ({ classes = [] }) => {
+    const navigate = useNavigate();
+
     return (
         <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
             <div className="flex items-center gap-2 mb-6">
@@ -25,7 +28,11 @@ const TeacherDashboard = ({ classes = [] }) => {
                     <tbody className="divide-y divide-slate-50 text-sm font-medium text-slate-600">
                         {classes.length > 0 ? (
                             classes.map((c, idx) => (
-                                <tr key={idx} className="hover:bg-slate-50/50 transition-colors">
+                                <tr 
+                                    key={idx} 
+                                    onClick={() => navigate(`/classes/detail/${c.id}`)}
+                                    className="hover:bg-indigo-50/20 hover:text-indigo-950 transition-colors cursor-pointer"
+                                >
                                     <td className="py-4 font-bold text-indigo-600">{c.classCode}</td>
                                     <td className="py-4 font-bold text-slate-700">{c.className}</td>
                                     <td className="py-4 text-slate-500">{c.courseName}</td>

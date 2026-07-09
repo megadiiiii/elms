@@ -5,12 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3d4f8f8-87cc-4ed0-af08-cca6af1876d3" name="Changes" comment="Update Audit">
-      <change afterPath="$PROJECT_DIR$/elms-frontend/src/pages/student/MyGradesPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elms-frontend/src/pages/dashboard/components/StudentGradesTable.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/avatars/3e4cca8f-d93e-4696-a914-61b51ecb325c.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/materials/30ee94a4-1d36-43a7-bf86-d17094126e13_20260421_231854.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../HTML/test.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elms-frontend/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/elms-frontend/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elms-frontend/src/api/translation.js" beforeDir="false" afterPath="$PROJECT_DIR$/elms-frontend/src/api/translation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elms-frontend/src/components/Sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/elms-frontend/src/components/Sidebar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elms-frontend/src/pages/class/GradePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/elms-frontend/src/pages/class/GradePage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elms-frontend/src/pages/dashboard/StudentDashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/elms-frontend/src/pages/dashboard/StudentDashboard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elms-frontend/src/pages/dashboard/TADashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/elms-frontend/src/pages/dashboard/TADashboard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elms-frontend/src/pages/dashboard/TeacherDashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/elms-frontend/src/pages/dashboard/TeacherDashboard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elms-frontend/src/pages/student/MyGradesPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/elms-frontend/src/pages/student/MyGradesPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/controller/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/controller/DashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/services/DashboardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/services/DashboardService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/services/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/services/StudentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/services/impl/DashboardServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/elms_backend/src/main/java/org/megadiiiii/elms_api/services/impl/DashboardServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/avatars/e00b8edc-a982-42a3-823e-ac2c898fe215.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/materials/d24bb258-f466-4553-8ab0-668c4a13f55f_KH Tuần SHCD K74.docx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,6 +169,7 @@
       <workItem from="1783430287897" duration="9423000" />
       <workItem from="1783475406176" duration="4846000" />
       <workItem from="1783526535384" duration="6200000" />
+      <workItem from="1783609440670" duration="5853000" />
     </task>
     <task id="LOCAL-00001" summary="Update Audit">
       <option name="closed" value="true" />

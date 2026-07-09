@@ -8,6 +8,8 @@ import org.megadiiiii.elms_api.security.JwtTokenProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -67,9 +69,9 @@ public class AuthController {
             auditLogService.log("LOGIN", "Người dùng " + authResponse.getFullName() + " (" + authResponse.getUsername() + ") đăng nhập thành công.");
 
             return ResponseEntity.ok(authResponse);
-                } catch (org.springframework.security.authentication.BadCredentialsException e) {
+                } catch (BadCredentialsException e) {
                     return ResponseEntity.status(401).body(Map.of("message", "Tên đăng nhập hoặc mật khẩu không chính xác"));
-                } catch (org.springframework.security.authentication.DisabledException e) {
+                } catch (DisabledException e) {
                     return ResponseEntity.status(401).body(Map.of("message", "Tài khoản của bạn đã bị khóa hoặc vô hiệu hóa"));
                 } catch (Exception e) {
                     return ResponseEntity.status(500).body(Map.of("message", "Lỗi xác thực hệ thống: " + e.getMessage()));
